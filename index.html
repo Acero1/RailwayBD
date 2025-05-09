@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Registros Escolar</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Gestor de Registros</h1>
+        
+        <div class="formulario">
+            <h2>Agregar Nuevo Registro</h2>
+            <form id="formAgregar">
+                <input type="text" id="nombre" placeholder="Nombre" required>
+                <input type="number" id="edad" placeholder="Edad">
+                <input type="email" id="email" placeholder="Email">
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+
+        <div class="busqueda">
+            <h2>Buscar Registro</h2>
+            <input type="text" id="buscar" placeholder="Buscar por nombre...">
+            <button onclick="buscarRegistros()">Buscar</button>
+        </div>
+
+        <div class="tabla-registros">
+            <h2>Lista de Registros</h2>
+            <div id="listaRegistros">
+                <!-- Aquí se cargarán los registros -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para editar -->
+    <div id="modalEditar" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModal()">&times;</span>
+            <h2>Editar Registro</h2>
+            <form id="formEditar">
+                <input type="hidden" id="editId">
+                <input type="text" id="editNombre" placeholder="Nombre" required>
+                <input type="number" id="editEdad" placeholder="Edad">
+                <input type="email" id="editEmail" placeholder="Email">
+                <button type="submit">Actualizar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
